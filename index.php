@@ -1,5 +1,10 @@
 <?php
 require_once('apis/function.php');
+
+$responseT = json_decode(file_get_contents(myServerName().'/apis/get-tweets.php'), true);
+$responseB = json_decode(file_get_contents(myServerName().'/apis/get-banners.php'), true);
+$responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php'), true);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,10 +120,10 @@ require_once('apis/function.php');
             <?php
 
 
-            $response = json_decode(file_get_contents(myServerName().'/apis/get-tweets.php'), true);
+          
 
-            for ($i = 0; $i < sizeof($response['data']); $i++) {
-              echo $response['data'][$i]['post'];
+            for ($i = 0; $i < sizeof($responseT['data']); $i++) {
+              echo $responseT['data'][$i]['post'];
             }
             ?>
           </div>
@@ -130,9 +135,8 @@ require_once('apis/function.php');
       <div    id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
         <div class="carousel-inner">
           <?php
-          $response = json_decode(file_get_contents(myServerName().'/apis/get-banners.php'), true);
-
-          for ($i = 0; $i < sizeof($response['data']); $i++) {
+         
+          for ($i = 0; $i < sizeof($responseB['data']); $i++) {
             if($i==0){
             ?>
             <div class="carousel-item active">
@@ -145,7 +149,7 @@ require_once('apis/function.php');
               <?php
             }
             ?>
-             <img style="height:50%;width:100%;object-fit: fill;" src="<?=$response['data'][$i]['image']?>" class="d-block w-100" alt="...">
+             <img style="height:50%;width:100%;object-fit: fill;" src="<?=$responseB['data'][$i]['image']?>" class="d-block w-100" alt="...">
             </div>
             <?php
           }
@@ -175,21 +179,21 @@ require_once('apis/function.php');
      <?php
 
 
-$response = json_decode(file_get_contents(myServerName().'/apis/get-works.php'), true);
 
-for ($i = 0; $i < sizeof($response['data']); $i++) {
+
+for ($i = 0; $i < sizeof($responseW['data']); $i++) {
   ?>
   
                <div style="width: 100%;margin: 10px;" class="card overflow-hidden shadow rounded-4 border-0">
                                 <div class="card-body p-0">
                                     <div class="d-flex align-items-center ">
                                         <div class="p-5">
-                                        <img  style="width:100%;object-fit: fill;" src="<?=$response['data'][$i]['image']?>" alt="..." />
+                                        <img  style="width:100%;object-fit: fill;" src="<?=$responseW['data'][$i]['image']?>" alt="..." />
                                         <br><br>
-                                        <h2 class=" fw-bolder"><span class="text-gradient d-inline"><?=$response['data'][$i]['title']?></span></h2>
+                                        <h2 class=" fw-bolder"><span class="text-gradient d-inline"><?=$responseW['data'][$i]['title']?></span></h2>
 
 <br>
-<span ><?=$response['data'][$i]['subtitle']?></span>
+<span ><?=$responseW['data'][$i]['subtitle']?></span>
 
 </div>
                                         
