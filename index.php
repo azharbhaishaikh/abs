@@ -164,7 +164,43 @@ require_once('apis/function.php');
         </button>
       </div>
     </section>
+    <section >
+    <br>
+    <br>
+    <h2 class="text-gradient text-center my-5 fw-bolder">कार्य</h2>
 
+<br>
+     <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
+
+     <?php
+
+
+$response = json_decode(file_get_contents(myServerName().'/apis/get-works.php'), true);
+
+for ($i = 0; $i < sizeof($response['data']); $i++) {
+  ?>
+  
+               <div style="width: 100%;margin: 10px;" class="card overflow-hidden shadow rounded-4 border-0">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="p-5">
+                                        <img  style="width:100%;object-fit: fill;" src="<?=$response['data'][$i]['image']?>" alt="..." />
+                                        <br><br>
+                                        <h2 class=" fw-bolder"><span class="text-gradient d-inline"><?=$response['data'][$i]['title']?></span></h2>
+
+<br>
+<span ><?=$response['data'][$i]['subtitle']?></span>
+
+</div>
+                                        
+                                    </div>
+                                </div>
+              </div>
+              <?php
+            }
+?>
+
+    </section>
 
     <section class="bg-light py-5">
       <!-- Gallery -->
