@@ -408,6 +408,11 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
   <script src="js/scripts.js"></script>
 
 
+<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+
+<img width="70px"  src="assets/logo-whatsapp-png-46041.png" />
+
+</a>
  
 </body>
 
