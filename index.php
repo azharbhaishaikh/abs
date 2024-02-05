@@ -297,6 +297,7 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
       </div>
     </section>
   </main>
+
   <!-- Footer-->
   <footer class="bg-white py-4 mt-auto">
     <div class="container px-5">
@@ -311,6 +312,9 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
 
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
+
+
+ 
 </body>
 
 </html>
