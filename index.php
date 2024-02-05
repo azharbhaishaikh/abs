@@ -3,7 +3,11 @@ require_once('apis/function.php');
 
 $responseT = json_decode(file_get_contents(myServerName().'/apis/get-tweets.php'), true);
 $responseB = json_decode(file_get_contents(myServerName().'/apis/get-banners.php'), true);
+$responseB2 = json_decode(file_get_contents(myServerName().'/apis/get-banners-2.php'), true);
 $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php'), true);
+
+$responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-me.php'), true);
+
 
 ?>
 <!DOCTYPE html>
@@ -38,10 +42,55 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
 <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
 
+  <?php
+         if(($responseB['data'])!="No Data Found!"){
+          ?>
+  <section >
+      <div    id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <?php
+         
+          for ($i = 0; $i < sizeof($responseB['data']); $i++) {
+            if($i==0){
+            ?>
+            <div class="carousel-item active">
+            
+            <?php
+            }else{
+              ?>
+            <div  class="carousel-item ">
+             
+              <?php
+            }
+            ?>
+             <img style="height:50%;width:100%;object-fit: fill;" src="<?=$responseB['data'][$i]['image']?>" class="d-block w-100" alt="...">
+            </div>
+            <?php
+          }
+          ?>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <?php
+    }
+    ?>
+
+
 
     <!-- Header-->
-    <header class="py-5">
-      <div class="container px-5 pb-5">
+    <header style="background-image: url('assets/tiranga_bg.png');  background-repeat: no-repeat;" class="py-5" >
+      <div  class="container px-5 pb-5">
         <div class="row gx-5 align-items-center">
 
 
@@ -51,7 +100,7 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
               <div class="profile ">
                 <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                 <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                <img class="profile-img" src="assets/long_photo.jpeg" alt="..." />
+                <img class="profile-img"  src="assets/full_photo.png" alt="..." />
 
               </div>
 
@@ -60,7 +109,7 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
           <div class="col-xxl-5">
             <!-- Header text content-->
             <div class="text-center text-xxl-start">
-
+            <br>
               <h1 class="display-3 fw-bolder mb-5 fs-1"><span class="text-gradient d-inline">अजहर हनिफ शेख</span></h1>
               <h1 class="fs-4 fw-bolder mb-5"><span class="text-gradient d-inline">महाराष्ट्र अध्यक्ष - International
                   Human Rights & Anti Corruption India</span></h1>
@@ -75,7 +124,8 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
                 <br>अल-शिफा हॉस्पिटल, मिल्लत नगर, श्रीरामपूर, महाराष्ट्र ४१३७०९
                 <br><br>
                 <a style="color: green; font-size: medium;"
-                  href="https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7">https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7
+                  href="https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7">https://maps.app.goo.gl/
+                  njeq74Y6upLmZ1Eg7
                 </a>
                 <br> <br>
                 <a style="color: purple; font-size: medium;" href="mailto:azharshaikh702097@gmail.com">azharshaikh702097@gmail.com
@@ -131,12 +181,87 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
       </div>
       </div>
     </header>
+    <?php
+         if(($responseAboutLines['data'])!="No Data Found!"){
+          ?>
+    <div class="row" style="padding:20px;">
+                <div   class="col-md-2">
+                    <img width="50px"  src="assets/quote2.png" >
+                    <h2 class="text-gradient text-center my-5 fw-bolder">माझ्याबद्दल</h2>
+                </div>
+
+                <div  style="padding-left:25px;padding-right:25px;" class="col-md-10">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        
+                        <div >
+                            <div >
+                                <div class="fw-bolder">
+                                <h4><?=$responseAboutLines['data']?></h4>
+                                 
+                                   </div>
+
+
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+    
     <section >
-      <div    id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
+
+    <?php
+
+    }
+    ?>
+ 
+    <h2 class="text-gradient text-center my-5 fw-bolder">कार्य</h2>
+
+
+     <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
+
+     <?php
+
+
+
+
+for ($i = 0; $i < sizeof($responseW['data']); $i++) {
+  ?>
+  
+               <div style="margin: 15px;" class="cardWidth card overflow-hidden shadow rounded-4 border-0">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center ">
+                                        <div >
+                                        <img  style="width:100%;height:50%;object-fit: fill;" src="<?=$responseW['data'][$i]['image']?>" alt="..." />
+                                        <br><br>
+                                        <h2 style="margin-left: 10px;" class=" fw-bolder"><span class="text-gradient d-inline"><?=$responseW['data'][$i]['title']?></span></h2>
+                                     
+<div style="margin: 10px;" ><?=$responseW['data'][$i]['subtitle']?></div>
+<br><br>
+</div>
+                                        
+                                    </div>
+                                </div>
+              </div>
+              <?php
+            }
+?>
+
+    </section>
+    <?php
+         if(($responseB2['data'])!="No Data Found!"){
+          ?>
+    <section>
+      <div    id="carouselExampleControls2" class="carousel slide"  data-bs-ride="carousel">
         <div class="carousel-inner">
           <?php
+        
          
-          for ($i = 0; $i < sizeof($responseB['data']); $i++) {
+          for ($i = 0; $i < sizeof($responseB2['data']); $i++) {
             if($i==0){
             ?>
             <div class="carousel-item active">
@@ -149,63 +274,29 @@ $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php')
               <?php
             }
             ?>
-             <img style="height:50%;width:100%;object-fit: fill;" src="<?=$responseB['data'][$i]['image']?>" class="d-block w-100" alt="...">
+             <img style="height:50%;width:100%;object-fit: fill;" src="<?=$responseB2['data'][$i]['image']?>" class="d-block w-100" alt="...">
             </div>
             <?php
           }
+        
           ?>
 
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2"
           data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </section>
-    <section >
-    <br>
-    <br>
-    <h2 class="text-gradient text-center my-5 fw-bolder">कार्य</h2>
-
-<br>
-     <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
-
-     <?php
-
-
-
-
-for ($i = 0; $i < sizeof($responseW['data']); $i++) {
-  ?>
-  
-               <div style="width: 100%;margin: 10px;" class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center ">
-                                        <div class="p-5">
-                                        <img  style="width:100%;object-fit: fill;" src="<?=$responseW['data'][$i]['image']?>" alt="..." />
-                                        <br><br>
-                                        <h2 class=" fw-bolder"><span class="text-gradient d-inline"><?=$responseW['data'][$i]['title']?></span></h2>
-
-<br>
-<span ><?=$responseW['data'][$i]['subtitle']?></span>
-
-</div>
-                                        
-                                    </div>
-                                </div>
-              </div>
-              <?php
-            }
-?>
-
-    </section>
-
+    <?php
+          }
+       ?>
     <section class="bg-light py-5">
       <!-- Gallery -->
       <div class="row">
@@ -236,6 +327,8 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
 
     </section>
 
+    
+
     <!-- About Section-->
     <section class="py-5">
       <div class="container px-5">
@@ -258,7 +351,8 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
                 <br>अल-शिफा हॉस्पिटल, मिल्लत नगर, श्रीरामपूर, महाराष्ट्र ४१३७०९
                 <br><br>
                 <a style="color: green; font-size: medium;"
-                  href="https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7">https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7
+                  href="https://maps.app.goo.gl/njeq74Y6upLmZ1Eg7">https://maps.app.goo.gl/
+                  njeq74Y6upLmZ1Eg7
                 </a>
                 <br> <br>
                 <a style="color: purple; font-size: medium;" href="mailto:azharshaikh702097@gmail.com">azharshaikh702097@gmail.com

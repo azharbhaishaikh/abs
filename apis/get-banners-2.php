@@ -3,7 +3,7 @@
 require_once('config.inc.php');
 require_once('function.php');
 
-$sql2 = "SELECT * FROM banners WHERE type=1";
+ $sql2 = "SELECT * FROM banners WHERE type=2";
 $statement2 = queryMysql($sql2);
 
 if($statement2->rowCount())
