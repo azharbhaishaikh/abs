@@ -227,7 +227,7 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
     }
     ?>
  
-    <h2 class="text-gradient text-center my-5 fw-bolder">कार्य</h2>
+    <h2 class="text-gradient text-center my-5 fw-bolder">जणकार्य</h2>
 
 
      <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
@@ -308,7 +308,7 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
        ?>
     <section class="bg-light py-5">
 
-    <h2 class="text-gradient text-center my-5 fw-bolder">जणकार्य</h2>
+    
       <!-- Gallery -->
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
