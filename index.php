@@ -151,6 +151,8 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
             <br>
             <br>
             <div class="d-flex justify-content-xxl-start fs-2 gap-4">
+            <a class="text-gradient" target="_blank" href="https://api.whatsapp.com/send?phone=917020979393"><i
+                  class="bi bi-whatsapp"></i></a>
               <a class="text-gradient" target="_blank"
                 href="https://twitter.com/Azharshaikhabs?t=WJ4nfwBfO-AQ26_tnTfvOQ&s=08"><i
                   class="bi bi-twitter"></i></a>
@@ -416,6 +418,8 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
             <br>
             <br>
             <div class="d-flex justify-content-center fs-2 gap-4">
+            <a class="text-gradient" target="_blank" href="https://api.whatsapp.com/send?phone=917020979393"><i
+                  class="bi bi-whatsapp"></i></a>
               <a class="text-gradient" target="_blank"
                 href="https://twitter.com/Azharshaikhabs?t=WJ4nfwBfO-AQ26_tnTfvOQ&s=08"><i
                   class="bi bi-twitter"></i></a>
