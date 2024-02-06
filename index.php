@@ -54,7 +54,7 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
       font-family: sans-serif;">  
 अजहर हनिफ शेख, महाराष्ट्र अध्यक्ष - International Human Rights & Anti Corruption India
 </marquee>
-      <div    id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
+      <div    id="carouselExampleControls" class="bannerHeight carousel slide"  data-bs-ride="carousel">
         <div class="carousel-inner">
           <?php
          
