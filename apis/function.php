@@ -53,7 +53,7 @@ function queryMysql($query)
  }
 
 function myServerName(){
-  return $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'];
+  return "https://azharshaikhabs.com/"; //$_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'];
 }
 
 ?>

@@ -2,6 +2,7 @@
 require_once('apis/function.php');
 
 $responseT = json_decode(file_get_contents(myServerName().'/apis/get-tweets.php'), true);
+$responseInsta = json_decode(file_get_contents(myServerName().'/apis/get-insta.php'), true);
 $responseB = json_decode(file_get_contents(myServerName().'/apis/get-banners.php'), true);
 $responseB2 = json_decode(file_get_contents(myServerName().'/apis/get-banners-2.php'), true);
 $responseW = json_decode(file_get_contents(myServerName().'/apis/get-works.php'), true);
@@ -218,7 +219,39 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
                 </div>
 
             </div>
+          
 
+            <section >
+
+<?php
+
+}
+?>
+
+
+
+
+ <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
+
+ <?php
+
+
+
+
+for ($i = 0; $i < sizeof($responseInsta['data']); $i++) {
+
+
+
+          
+
+  for ($i = 0; $i < sizeof($responseInsta['data']); $i++) {
+    echo $responseT['data'][$i]['post'];
+  }
+
+        }
+?>
+
+</section>     
     
     <section >
 
