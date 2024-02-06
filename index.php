@@ -242,7 +242,7 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
   for ($i = 0; $i < sizeof($responseInsta['data']); $i++) {
     ?>
   <div style="height: 600px; overflow: auto;
-                      margin: 20px;
+                      margin: 10px;
                             display:block;" class="instaWidth">
     <?php
 
