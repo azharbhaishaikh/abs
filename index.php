@@ -16,8 +16,8 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="description" content="Azhar Shaikh Abs" />
+  <meta name="author" content="Azhar Shaikh Abs" />
   <title>Azhar Shaikh Abs</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -42,10 +42,18 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
 <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
 
+
   <?php
          if(($responseB['data'])!="No Data Found!"){
           ?>
   <section >
+  <marquee width="100%" behavior="scroll" style="font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      background: -webkit-linear-gradient(315deg, #00873b 0%, #b04c00 100%);
+      font-family: sans-serif;">  
+अजहर हनिफ शेख, महाराष्ट्र अध्यक्ष - International Human Rights & Anti Corruption India
+</marquee>
       <div    id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
         <div class="carousel-inner">
           <?php
@@ -117,9 +125,9 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
 
               <div class="fw-bolder fs-5 text-muted">
                 डॉ. अब्दुल कलाम समाज भूषण
-                <br>संस्थापक - ABS सोशल ग्रूप
+                <br>संस्थापक  - ABS सोशल ग्रूप
                 <br>जिल्हाध्यक्ष - Medical foundation
-                <br>Founder - AV NEWS
+                <br>संस्थापक  - AV NEWS
                 <br>
                 <br>अल-शिफा हॉस्पिटल, मिल्लत नगर, श्रीरामपूर, महाराष्ट्र ४१३७०९
                 <br><br>
@@ -184,19 +192,19 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
     <?php
          if(($responseAboutLines['data'])!="No Data Found!"){
           ?>
-    <div class="row" style="padding:20px;">
+    <div class="row "  style="padding:20px;padding-top:50px;padding-bottom:50px; background: -webkit-linear-gradient(315deg, #00873b 0%, #b04c00 100%);">
                 <div   class="col-md-2">
-                    <img width="50px"  src="assets/quote2.png" >
-                    <h2 class="text-gradient text-center my-5 fw-bolder">माझ्याबद्दल</h2>
+                    <img bgColor="white" width="50px"  src="assets/quote2.png" >
+                   
                 </div>
 
-                <div  style="padding-left:25px;padding-right:25px;" class="col-md-10">
+                <div  style="padding-left:25px;padding-right:25px;padding-top:20px;" class="col-md-10">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         
                         <div >
                             <div >
                                 <div class="fw-bolder">
-                                <h4><?=$responseAboutLines['data']?></h4>
+                                <h4  style="color:white;"><?=$responseAboutLines['data']?></h4>
                                  
                                    </div>
 
@@ -256,6 +264,7 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
          if(($responseB2['data'])!="No Data Found!"){
           ?>
     <section>
+    
       <div    id="carouselExampleControls2" class="carousel slide"  data-bs-ride="carousel">
         <div class="carousel-inner">
           <?php
@@ -298,6 +307,8 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
           }
        ?>
     <section class="bg-light py-5">
+
+    <h2 class="text-gradient text-center my-5 fw-bolder">जणकार्य</h2>
       <!-- Gallery -->
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
@@ -344,9 +355,9 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
 
               <div class="fw-bolder fs-5 text-muted">
                 डॉ. अब्दुल कलाम समाज भूषण
-                <br>संस्थापक - ABS सोशल ग्रूप
+                <br>संस्थापक  - ABS सोशल ग्रूप
                 <br>जिल्हाध्यक्ष - Medical foundation
-                <br>Founder - AV NEWS
+                <br>संस्थापक  - AV NEWS
                 <br>
                 <br>अल-शिफा हॉस्पिटल, मिल्लत नगर, श्रीरामपूर, महाराष्ट्र ४१३७०९
                 <br><br>
