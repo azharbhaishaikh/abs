@@ -123,6 +123,20 @@ body {
 .my-float{
 	margin-top:16px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .instaWidth {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .instaWidth {
+    width: 20%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .cardWidth {
     width: 90%;
@@ -134,6 +148,7 @@ body {
     width: 30%;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .bannerHeight {
     height:  270px;

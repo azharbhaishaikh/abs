@@ -229,29 +229,33 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
 ?>
 
 
+<?php
+         if(($responseInsta['data'])!="No Data Found!"){
+          ?>
 
-
- <div style="justify-content: center;" class="d-flex align-content-center  flex-wrap">
-
- <?php
-
-
-
-
-for ($i = 0; $i < sizeof($responseInsta['data']); $i++) {
+ <div style="justify-content: center;padding:20px;" class="d-flex align-content-center flex-wrap">
 
 
 
           
-
+<?php
   for ($i = 0; $i < sizeof($responseInsta['data']); $i++) {
-    echo $responseT['data'][$i]['post'];
+    ?>
+  <div style="height: 600px; overflow: auto;
+                      margin: 20px;
+                            display:block;" class="instaWidth">
+    <?php
+
+    echo $responseInsta['data'][$i]['post'];
+    ?>
+  </div>
+    <?php
   }
 
-        }
+        
 ?>
 
-</section>     
+</section>
     
     <section >
 
