@@ -159,7 +159,7 @@ $responseAboutLines = json_decode(file_get_contents(myServerName().'/apis/about-
               <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/azhar-shaikh-abs-62726426b"><i
                   class="bi bi-linkedin"></i></a>
               <a class="text-gradient" target="_blank"
-                href="https://www.facebook.com/profile.php?id=100008158759204&ref=xav_ig_profile_web"><i
+                href="https://www.facebook.com/p/Azhar-Bhai-Shaikh-_ABS-100086176765516/"><i
                   class="bi bi-facebook"></i></a>
               <a class="text-gradient" target="_blank" href="https://www.instagram.com/azhar___abs/"><i
                   class="bi bi-instagram"></i></a>
@@ -426,7 +426,7 @@ for ($i = 0; $i < sizeof($responseW['data']); $i++) {
               <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/azhar-shaikh-abs-62726426b"><i
                   class="bi bi-linkedin"></i></a>
               <a class="text-gradient" target="_blank"
-                href="https://www.facebook.com/profile.php?id=100008158759204&ref=xav_ig_profile_web"><i
+                href="https://www.facebook.com/p/Azhar-Bhai-Shaikh-_ABS-100086176765516/"><i
                   class="bi bi-facebook"></i></a>
               <a class="text-gradient" target="_blank" href="https://www.instagram.com/azhar___abs/"><i
                   class="bi bi-instagram"></i></a>
